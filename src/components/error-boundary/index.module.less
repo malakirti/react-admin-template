@@ -1,0 +1,34 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	padding: 0 10px 20px 10px;
+	color: @dark-main-font-color;
+	background: @dark-main-bg-color;
+	.title {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 24px;
+		font-weight: 700;
+		color: @dark-error-color;
+	}
+	.sub {
+		margin-bottom: 20px;
+		color: @dark-primary-color;
+	}
+	.details {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		padding: 0 10px 10px;
+		overflow: auto;
+		white-space: pre-wrap;
+		background: @dark-base-bg-color;
+		.type {
+			margin: 10px 0;
+			font-size: 16px;
+			color: @dark-error-color;
+		}
+	}
+}

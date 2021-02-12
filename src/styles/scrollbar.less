@@ -1,0 +1,37 @@
+::-webkit-scrollbar {
+	width: @scrollbar-width;
+	height: @scrollbar-height;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #ddd;
+	border-radius: 10px;
+	&:hover {
+		background: #ccc;
+	}
+}
+
+
+
+[data-theme="dark"] {
+	::-webkit-scrollbar-thumb {
+		background: #4c4c4c;
+		&:hover {
+			background: #5c5c5c;
+		}
+	}
+}
+
+#app-aside {
+	::-webkit-scrollbar-thumb {
+		background: #4c4c4c;
+		&:hover {
+			background: #5c5c5c;
+		}
+	}
+}

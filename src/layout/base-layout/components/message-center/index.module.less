@@ -1,0 +1,136 @@
+.messageCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: @global-header-height;
+	height: @global-header-height;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.3s;
+	.bell {
+		font-size: 20px;
+		color: @dark-main-font-color;
+		cursor: pointer;
+		transition: color 0.3s;
+	}
+	&:hover {
+		background: @dark-hover-bg-color;
+		.bell {
+			color: @dark-primary-color;
+		}
+	}
+}
+
+.messageDropdown {
+	width: 360px;
+	background: @main-bg-color;
+	border: 1px solid @border-color;
+
+	.messages {
+		max-height: 400px;
+		overflow: auto;
+		.listItem {
+			display: block;
+			padding-right: 12px;
+			padding-left: 12px;
+			transition: all 0.3s;
+			&:hover {
+				background: @base-bg-color;
+			}
+
+			.listExtra {
+				margin-top: 2px;
+				text-align: right;
+				opacity: 0.3;
+			}
+		}
+	}
+	.messageFooter {
+		height: 46px;
+		line-height: 46px;
+		text-align: center;
+		user-select: none;
+
+		div {
+			display: inline-block;
+			width: 50%;
+			cursor: pointer;
+			transition: all 0.3s;
+
+			&:hover {
+				color: @primary-color;
+			}
+
+			&:first-child {
+				border-right: 1px solid @border-color;
+			}
+		}
+	}
+
+	:global {
+		.ant-tabs-nav {
+			margin-bottom: 0;
+		}
+		.ant-tabs-tab .anticon {
+			margin-right: 4px;
+		}
+		.ant-tabs-nav-list {
+			margin: auto;
+		}
+		.ant-divider-horizontal {
+			margin: 0;
+		}
+		.ant-tabs-ink-bar {
+			background: @primary-color;
+		}
+		.ant-tabs-tab:hover {
+			color: @primary-color;
+		}
+		.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+			color: @primary-color;
+		}
+	}
+}
+
+[data-theme="dark"] {
+	.messageCenter {
+		&:hover {
+			background: @dark-hover-bg-color;
+			.bell {
+				color: @dark-primary-color;
+			}
+		}
+	}
+
+	.messageDropdown {
+		background: @dark-main-bg-color;
+		.messages {
+			.listItem {
+				&:hover {
+					background: @dark-hover-bg-color;
+				}
+			}
+		}
+		.messageFooter {
+			div {
+				&:hover {
+					color: @dark-primary-color;
+				}
+				&:first-child {
+					border-right: 1px solid @dark-border-color;
+				}
+			}
+		}
+		:global {
+			.ant-tabs-ink-bar {
+				background: @dark-primary-color;
+			}
+			.ant-tabs-tab:hover {
+				color: @dark-primary-color;
+			}
+			.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+				color: @dark-primary-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"restartable": "rs",
+	"verbose": true,
+	"execMap": {
+		"js": "node --harmony"
+	},
+	"env": {
+		"NODE_ENV": "development"
+	},
+	"ignore": [],
+	"watch": ["mock"],
+	"ext": "*.js"
+}

@@ -1,0 +1,33 @@
+.card {
+	position: relative;
+	width: 520px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+.panda {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: none;
+	width: 120px;
+	transform: translate3d(-50%, -83%, 0);
+	&:nth-child(2) {
+		width: 120px;
+		transform: translate3d(-50%, -75.8%, 0);
+	}
+	&:nth-child(3) {
+		width: 104px;
+		transform: translate3d(-50%, -75%, 0);
+	}
+
+	&.show {
+		display: block;
+	}
+}
+.remember {
+	:global {
+		.ant-form-item-control-input-content {
+			padding-left: 54px;
+		}
+	}
+}

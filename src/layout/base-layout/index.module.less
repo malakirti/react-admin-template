@@ -1,0 +1,73 @@
+.appHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: @global-header-height;
+	padding: 0;
+	line-height: @global-header-height;
+	color: @dark-main-font-color;
+	//background: @dark-main-bg-color;
+	.headerMenu {
+		display: flex;
+		flex: 1;
+		align-items: center;
+
+		:global {
+			.ant-menu-horizontal {
+				flex: 1;
+			}
+		}
+	}
+}
+
+.appSider {
+	//background: @dark-main-bg-color;
+	.appAside {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		.appAsideLogo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 64px;
+			padding: 0 10px;
+			overflow: hidden;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 1;
+			color: @dark-primary-color;
+			text-align: center;
+			cursor: pointer;
+			user-select: none;
+			.logo {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		.asideMenu {
+			flex: 1;
+			overflow-y: auto;
+		}
+		.fold {
+			display: flex;
+			align-items: center;
+			height: 40px;
+			padding: 0 16px;
+			font-size: 16px;
+			color: @dark-main-font-color;
+			cursor: pointer;
+			border-top: 1px solid @dark-border-color;
+			transition: all 0.3s;
+			&:hover {
+				color: @dark-primary-color;
+				background: @dark-hover-bg-color;
+			}
+		}
+	}
+}
+
+.appRouterView {
+	padding: 10px;
+	overflow: auto;
+}
