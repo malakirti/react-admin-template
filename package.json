@@ -16,11 +16,13 @@
     "build": "cross-env BUILD_ENV=production node .scripts/web/build.js",
     "package": "cross-env ELECTRON_PACKED=1 BUILD_TARGET=electron BUILD_ENV=production node ./.scripts/electron/build.js",
     "pretty-quick": "pretty-quick",
+    "pretty-quick-staged": "pretty-quick --staged",
     "prettier": "prettier -c --write src/**/*.{js,jsx,ts,tsx,less,md,json}",
     "fix:styles": "stylelint --fix src/**/*.less --syntax less",
     "fix:scripts": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "build:analyze": "cross-env BUNDLE_ANALYZER=1 npm run build",
     "package:analyze": "cross-env BUNDLE_ANALYZER=1 npm run package",
+    "commitlint": "commitlint -e .git/COMMIT_EDITMSG",
     "lint-staged": "lint-staged",
     "lint:styles": "stylelint src/**/*.less --syntax less",
     "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx ./src",
@@ -41,7 +43,8 @@
     "watch": "tsc --watch",
     "npm-check": "npm-check -u",
     "git-config": "node ./.scripts/utils/git-config.js",
-    "postinstall": "electron-builder install-app-deps && npm run git-config"
+    "pre-push": "node ./.scripts/utils/pre-push.js",
+    "postinstall": "husky install .scripts/.husky && electron-builder install-app-deps && npm run git-config"
   },
   "dependencies": {
     "@ant-design/icons": "^4.4.0",
@@ -137,7 +140,7 @@
     "fork-ts-checker-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^4.5.1",
     "http-proxy-middleware": "^1.0.6",
-    "husky": "^4.3.8",
+    "husky": "^5.0.9",
     "inquirer": "^7.3.3",
     "less": "^4.1.0",
     "less-loader": "^7.3.0",
@@ -186,17 +189,6 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^5.7.3",
     "webpackbar": "^5.0.0-3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run git-config && npm run pretty-quick && npm run lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "echo \"\n半壁翻云刃，满江酩酊红。千古光阴一霎时，且醉浪涛中！\n\""
-    }
-  },
-  "lint-staged": {
-    "src/**/*.less": "npm run lint:styles",
-    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:scripts"
   },
   "repository": {
     "type": "git",
