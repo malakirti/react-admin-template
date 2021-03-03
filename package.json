@@ -44,7 +44,7 @@
     "npm-check": "npm-check -u",
     "git-config": "node ./.scripts/utils/git-config.js",
     "pre-push": "node ./.scripts/utils/pre-push.js",
-    "postinstall": "husky install .scripts/.husky && electron-builder install-app-deps && npm run git-config"
+    "postinstall": "husky install .scripts/.husky && electron-builder install-app-deps && cross-env POSTINSTALL=1 npm run git-config"
   },
   "dependencies": {
     "@ant-design/icons": "^4.4.0",
